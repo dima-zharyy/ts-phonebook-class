@@ -1,9 +1,8 @@
-import React from 'react';
-import { nanoid } from 'nanoid';
-import css from './Filter.module.css';
-import PropTypes from 'prop-types';
+import { nanoid } from "nanoid";
+import css from "./Filter.module.css";
+import { IFilter } from "../../types/appTypes";
 
-export default function Filter({ onChange, value }) {
+export const Filter: React.FC<IFilter> = ({ onChange, value }) => {
   const filterId = nanoid(5);
   return (
     <div className={css.filterWrap}>
@@ -19,9 +18,4 @@ export default function Filter({ onChange, value }) {
       />
     </div>
   );
-}
-
-Filter.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string,
 };
